@@ -3,12 +3,8 @@ import React from "react";
 import "./JobCard.css";
 
 const JobCard = ({
-  title,
-  company,
-  location,
-  description,
-  experience,
-  applyLink,
+  jobDetailsFromCompany,
+  jdLink,
 }) => {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -18,22 +14,22 @@ const JobCard = ({
 
   return (
     <div className="job-card">
-      <h2>{title}</h2>
+      <h2>Software Engineer</h2>
       <p>
-        {company} - {location}
+        {"ABC Tech"} - {"New York, NY"}
       </p>
-      <div className="description">
-        <p>{expanded ? description : description.slice(0, 100)}</p>
-        {description.length > 100 && (
+      <div className="jobDetailsFromCompany">
+        <p>{expanded ? jobDetailsFromCompany : jobDetailsFromCompany.slice(0, 100)}</p>
+        {jobDetailsFromCompany.length > 100 && (
           <button className="expand-button " onClick={toggleDescription}>
             {expanded ? "Show Less" : "Show More"}
           </button>
         )}
       </div>
-      <p>Experience Required: {experience}</p>
+      <p>Experience Required: {"3+ years"}</p>
       <a
         className="apply-button"
-        href={applyLink}
+        href={  jdLink}
         target="_blank"
         rel="noopener noreferrer"
       >

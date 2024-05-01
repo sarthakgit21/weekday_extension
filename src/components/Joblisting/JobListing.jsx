@@ -1,25 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
+import { useDispatch, useSelector } from "react-redux";
+import fetchJobs from "../fetchingjobs/fetchjob";
+import { Jobdataactions } from "../Store/store";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const JobListing = () => {
-  const jobList = [
-    {
-      title: "Software Engineer",
-      company: "ABC Tech",
-      location: "New York, NY",
-      description:
-        "We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...We are seeking a skilled software engineer to join our team...",
-      experience: "3+ years",
-      applyLink: "https://example.com/apply",
-    },
-  ];
-
+  const jobList = useSelector((store) => store.Jobdata);
+  const usedispatch = useDispatch();
+  const [loading, setloading] = useState(true);
+  const fetchmorejobs = async () => {
+    const data = await fetchJobs();
+    usedispatch(Jobdataactions.setData(data));
+  };
+  
+  useEffect(() => {
+    fetchmorejobs();
+    setloading(false);
+  }, []);
   return (
-    <div className="job-listing">
-      {jobList.map((job, index) => (
-        <JobCard key={index} {...job} />
-      ))}
-    </div>
+    <>
+      {loading && <h4>Loading...</h4>}
+      <InfiniteScroll
+        dataLength={jobList.length}
+        next={fetchmorejobs}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+      >
+        <div className="job-listing">
+          {jobList.map((job, index) => (
+            <JobCard key={index} {...job} />
+          ))}
+        </div>
+      </InfiniteScroll>
+    </>
   );
 };
 
