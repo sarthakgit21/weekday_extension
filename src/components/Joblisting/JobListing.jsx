@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import { useDispatch, useSelector } from "react-redux";
-import fetchJobs from "../fetchingjobs/fetchjob";
-import { Jobdataactions } from "../Store/store";
+import fetchJobs from "../../data/fetchingjobs/fetchjob";
+import { Jobdataactions } from "../../data/Store/store";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const JobListing = () => {
