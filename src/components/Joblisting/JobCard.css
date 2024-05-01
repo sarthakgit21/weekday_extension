@@ -1,0 +1,50 @@
+
+.job-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  max-width: 420px;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.description p {
+  margin: 0;
+}
+
+.expand-button {
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.expand-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.apply-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
