@@ -1,3 +1,7 @@
+# Diployed Link
+
+[Click ME](https://6633638924494da9fd38cab0--fantastic-fox-b6ec62.netlify.app/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
