@@ -1,12 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
+* {
+  font-family: "Manrope", sans-serif;
+}
 .job-card {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
   background-color: #fff;
-  max-width: 420px;
+  width: 340px;
+  height: auto;
 }
 
 .description {
@@ -14,7 +19,7 @@
 }
 
 .description p {
-  margin: 0;
+  padding: auto;
 }
 
 .expand-button {
@@ -24,6 +29,18 @@
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+img {
+  width: 50px;
+}
+.header-top {
+  margin: 5px;
+}
+.top-header {
+  /* border: 1px solid black; */
+  border-radius: 20%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 7px;
 }
 
 .expand-button:hover {
@@ -36,7 +53,6 @@
   width: 100%;
   text-align: center;
   padding: 10px;
-  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -45,6 +61,29 @@
   transition: background-color 0.3s ease;
 }
 
-.apply-button:hover {
-  background-color: #0056b3;
+.companny {
+  display: flex;
 }
+.left-company {
+  width: 20%;
+}
+.right-company {
+  width: 80%;
+}
+.job-listing {
+  display: grid;
+  grid-gap: 1.5em;
+  margin: 1.5em 1.5em 13.5em 1.5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.buttons {
+  width: 100%;
+}
+

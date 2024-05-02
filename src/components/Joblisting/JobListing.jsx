@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import fetchJobs from "../../data/fetchingjobs/fetchjob";
 import { Jobdataactions } from "../../data/Store/store";
 import InfiniteScroll from "react-infinite-scroll-component";
+import "./JobCard.css";
 
 const JobListing = () => {
   const jobList = useSelector((store) => store.Jobdata);
@@ -42,9 +43,11 @@ const JobListing = () => {
         loader={<h4>Loading...</h4>}
       >
         <div className="job-listing">
-          {jobListFinal.map((job, index) => (
-            <JobCard key={index} {...job} />
-          ))}
+          <div className="container">
+            {jobListFinal.map((job, index) => (
+              <JobCard key={index} {...job} />
+            ))}
+          </div>
         </div>
       </InfiniteScroll>
     </>

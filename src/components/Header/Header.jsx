@@ -45,7 +45,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setRole(newValue?newValue.label:null);
+          setRole(newValue ? newValue.label : null);
         }}
         id="country-customized-option-demo"
         options={roles}
@@ -56,7 +56,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setSizeOfCompnay(newValue?newValue.label:null);
+          setSizeOfCompnay(newValue ? newValue.label : null);
         }}
         id="country-customized-option-demo"
         options={numberOfEmployee}
@@ -68,7 +68,7 @@ const Header = () => {
       />
       <Autocomplete
         onChange={(event, newValue) => {
-          setExperience(newValue?newValue.label:null);
+          setExperience(newValue ? newValue.label : null);
         }}
         style={{ width: "14%" }}
         id="country-customized-option-demo"
@@ -80,7 +80,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setRemoteVal(newValue?newValue.label:null);
+          setRemoteVal(newValue ? newValue.label : null);
         }}
         id="country-customized-option-demo"
         options={remote}
@@ -91,7 +91,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setBasePay(newValue?newValue.label:null);
+          setBasePay(newValue ? newValue.label : null);
         }}
         id="country-customized-option-demo4"
         options={minimumBasePay}
@@ -105,13 +105,17 @@ const Header = () => {
         <Autocomplete
           freeSolo
           onChange={(event, newValue) => {
-            setCompany(newValue?newValue:null);
+            console.log(newValue);
+            setCompany(newValue ? newValue : null);
           }}
           id="free-solo-2-demo"
           disableClearable
           options={companies.map((option) => option.title)}
           renderInput={(params) => (
             <TextField
+            onChange={(event, newValue) => {
+            setCompany(newValue ? newValue : null);
+          }}
               {...params}
               label="Search Company"
               InputProps={{
