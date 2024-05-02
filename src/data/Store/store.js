@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+//************************REDUX STORE**************************** */
 
 const JobDataSlice = createSlice({
   name: "Jobdata",

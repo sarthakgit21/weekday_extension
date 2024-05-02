@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   font-family: "Manrope", sans-serif;
 }
@@ -10,10 +10,42 @@
   padding: 20px;
   margin-bottom: 20px;
   background-color: #fff;
-  width: 340px;
+  width: 320px;
   height: auto;
 }
+.header-container{
+  display: flex;
+  gap: 20px;
+}
 
+.header-first {
+  margin-left: 80px;
+}
+.filter-val{
+  width: 14%;
+}
+@media screen and (max-width:600px) {
+  .header-first {
+    margin-left: auto;
+  }
+  .header-container{
+    display:block;
+  }
+  .filter-val{
+    width: 100%;
+  }
+}
+@media screen and (max-width:1200px) {
+  .header-first {
+    margin-left: auto;
+  }
+  
+}
+@media screen and (max-width:1400px) {
+  .header-first {
+    margin-left: auto;
+  }
+}
 .description {
   margin-bottom: 10px;
 }
@@ -21,14 +53,31 @@
 .description p {
   padding: auto;
 }
-
+hr {
+  border: 1px solid;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
 .expand-button {
+  width: 100%;
+  margin-bottom: 3px;
+  font-size: medium;
+  border: none;
+  color: rgb(17, 17, 203);
   background-color: transparent;
-  border: 1px solid #007bff;
-  color: #007bff;
   padding: 5px 10px;
-  border-radius: 4px;
+  z-index: 999;
+  /* backdrop-filter: blur(1px) saturate(10%); */
   cursor: pointer;
+}
+.para {
+  margin-bottom: 0px;
+  box-shadow: 1px 12px 2px 0px rgba(222, 222, 234, 0.2);
+  backdrop-filter: blur(calc(0.9, 0.9));
+}
+
+.pic-logo img {
+  filter: blur(0.3em);
+  border-radius: 50%;
 }
 
 img {
@@ -39,14 +88,10 @@ img {
 }
 .top-header {
   /* border: 1px solid black; */
-  border-radius: 20%;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 7px;
 }
 
-.expand-button:hover {
-  background-color: #007bff;
-  color: #fff;
-}
 
 .apply-button {
   display: block;
@@ -55,10 +100,11 @@ img {
   padding: 10px;
   color: white;
   border: none;
+  font-size: small;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: height 0.3s ease;
 }
 
 .companny {
@@ -69,21 +115,27 @@ img {
 }
 .right-company {
   width: 80%;
+  padding-left: 10px;
+  margin-top: 13px;
 }
 .job-listing {
   display: grid;
   grid-gap: 1.5em;
   margin: 1.5em 1.5em 13.5em 1.5em;
 }
+/* .discription{
+  z-index: -1;
+} */
 
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 30px;
+  margin: auto;
+  justify-content: center;
 }
 
 .buttons {
   width: 100%;
 }
-

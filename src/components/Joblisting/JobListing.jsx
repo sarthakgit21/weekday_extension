@@ -7,6 +7,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import "./JobCard.css";
 
 const JobListing = () => {
+
+  //***************************LOGIC***************************** */
   const jobList = useSelector((store) => store.Jobdata);
   const usedispatch = useDispatch();
   const [loading, setloading] = useState(true);
@@ -32,7 +34,7 @@ const JobListing = () => {
     return boolVal;
   });
   const jobListFinal = jobListFiltered;
-
+//***************************RENDERING***************************** */
   return (
     <>
       {loading && <h4>Loading...</h4>}

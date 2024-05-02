@@ -12,6 +12,7 @@ const requestOptions = {
   headers: myHeaders,
   body: raw, 
 };
+// WE CAN USE AXIOS ALSO FOR DATA RETREIVAL BUT I HVAE USED THIS AS IT IS GIVEN IN DOCS OF ASSISSMENT
 
 
 const fetchJobs = async () => {
