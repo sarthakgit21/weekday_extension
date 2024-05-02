@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import Autocomplete, { autocompleteClasses } from "@mui/material/Autocomplete";
+import React, { useEffect, useState } from "react";
+import Autocomplete from "@mui/material/Autocomplete";
 import { TextField } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import { useDispatch, useSelector } from "react-redux";
+import { filterActionns } from "../../data/Store/store";
 
 const Header = () => {
   const roles = [{ label: "Software Developer" }];
@@ -20,15 +22,30 @@ const Header = () => {
   const [role, setRole] = React.useState(null);
   const [experience, setExperience] = React.useState(null);
   const [remoteVal, setRemoteVal] = useState(null);
-  const [Company, setCompany] = useState(null);
+  const [company, setCompany] = useState(null);
   const [sizeofcompnay, setSizeOfCompnay] = useState(null);
+  const usedispatch = useDispatch();
+  const filterdata = useSelector((store) => store.filterData);
+
+  useEffect(() => {
+    usedispatch(
+      filterActionns.setData({
+        basePay,
+        role,
+        experience,
+        remoteVal,
+        company,
+        sizeofcompnay,
+      })
+    );
+  }, [basePay, role, experience, remoteVal, company, sizeofcompnay]);
 
   return (
     <>
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setRole(newValue.label);
+          setRole(newValue?newValue.label:null);
         }}
         id="country-customized-option-demo"
         options={roles}
@@ -39,7 +56,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setSizeOfCompnay(newValue.label);
+          setSizeOfCompnay(newValue?newValue.label:null);
         }}
         id="country-customized-option-demo"
         options={numberOfEmployee}
@@ -51,7 +68,7 @@ const Header = () => {
       />
       <Autocomplete
         onChange={(event, newValue) => {
-          setExperience(newValue.label);
+          setExperience(newValue?newValue.label:null);
         }}
         style={{ width: "14%" }}
         id="country-customized-option-demo"
@@ -63,7 +80,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setRemoteVal(newValue.label);
+          setRemoteVal(newValue?newValue.label:null);
         }}
         id="country-customized-option-demo"
         options={remote}
@@ -74,7 +91,7 @@ const Header = () => {
       <Autocomplete
         style={{ width: "14%" }}
         onChange={(event, newValue) => {
-          setBasePay(newValue.label);
+          setBasePay(newValue?newValue.label:null);
         }}
         id="country-customized-option-demo4"
         options={minimumBasePay}
@@ -88,7 +105,7 @@ const Header = () => {
         <Autocomplete
           freeSolo
           onChange={(event, newValue) => {
-            setCompany(newValue.label);
+            setCompany(newValue?newValue:null);
           }}
           id="free-solo-2-demo"
           disableClearable
